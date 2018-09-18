@@ -45,10 +45,14 @@ then
     echo "~/.bashrc is already configured for proxy."
 else
     # bashrc not configured for proxy, need to add
-    sed -i '$ a\'"export http_proxy=$ORACLE_HTTP_PROXY"'' $BASHRC_FILE
-    sed -i '$ a\'"export https_proxy=$ORACLE_HTTPS_PROXY"'' $BASHRC_FILE
-    sed -i '$ a\'"export HTTP_PROXY=$ORACLE_HTTP_PROXY"'' $BASHRC_FILE
-    sed -i '$ a\'"export HTTPS_PROXY=$ORACLE_HTTPS_PROXY"'' $BASHRC_FILE
+    sudo sed -i '/unset http_proxy/d' $BASHRC_FILE
+    sudo sed -i '/unset https_proxy/d' $BASHRC_FILE
+    sudo sed -i '/unset HTTP_PROXY/d' $BASHRC_FILE
+    sudo sed -i '/unset HTTPS_PROXY/d' $BASHRC_FILE
+    sudo sed -i '$ a\'"export http_proxy=$ORACLE_HTTP_PROXY"'' $BASHRC_FILE
+    sudo sed -i '$ a\'"export https_proxy=$ORACLE_HTTPS_PROXY"'' $BASHRC_FILE
+    sudo sed -i '$ a\'"export HTTP_PROXY=$ORACLE_HTTP_PROXY"'' $BASHRC_FILE
+    sudo sed -i '$ a\'"export HTTPS_PROXY=$ORACLE_HTTPS_PROXY"'' $BASHRC_FILE
         
     echo "~/.bashrc now has been configured for proxy."
 fi
