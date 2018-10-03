@@ -48,6 +48,20 @@ EOF
 fi
 echo "========================================"
 
+rm -rf /u01/content/cloud-native-devops-workshop*
+
+rm -rf /u01/content/HOL*
+
+cd /u01/content
+
+git clone https://github.com/nagypeter/HOL6283.git
+
+git clone https://github.com/oracle/weblogic-kubernetes-operator.git
+
+git clone https://github.com/nagypeter/HOL6285.git
+
+echo "========================================"
+
 # first try to delete the rule
 sudo iptables -D INPUT -i docker0 -j ACCEPT
 
