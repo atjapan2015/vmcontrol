@@ -54,9 +54,9 @@ rm -rf /u01/content/HOL*
 
 cd /u01/content
 
-git clone https://github.com/nagypeter/HOL6283.git
-
 git clone https://github.com/oracle/weblogic-kubernetes-operator.git
+
+git clone https://github.com/nagypeter/HOL6284.git
 
 git clone https://github.com/nagypeter/HOL6285.git
 
