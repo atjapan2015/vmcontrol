@@ -25,7 +25,7 @@ FF_SHORTCUT=~/Desktop/chrome.desktop
 
 if grep -q "Exec=/usr/bin/firefox" $FF_SHORTCUT;
 then
-    echo "Firefox shortcut ready."    
+    echo "Firefox shortcut ready."
 else
     cat > $FF_SHORTCUT <<EOF
 [Desktop Entry]
@@ -54,7 +54,13 @@ rm -rf /u01/content/HOL*
 
 cd /u01/content
 
+rm -rf /u01/content/weblogic-kubernetes-operator
+
 git clone https://github.com/oracle/weblogic-kubernetes-operator.git
+
+git clone https://github.com/nagypeter/HOL6283.git
+
+rm -f ~/.kube/config
 
 git clone https://github.com/nagypeter/HOL6284.git
 
