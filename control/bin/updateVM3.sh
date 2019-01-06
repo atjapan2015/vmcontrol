@@ -54,6 +54,8 @@ rm -rf /home/oracle/lib/oracle-cli
 
 bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh) --accept-all-defaults"
 
+mkdir -p ~/.oci
+
 echo "========================================"
 
 echo "Prepare workshop repository..."
