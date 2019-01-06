@@ -48,6 +48,16 @@ EOF
 fi
 echo "========================================"
 
+echo "Install OCI CLI"
+
+rm -rf /home/oracle/lib/oracle-cli
+
+bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh) --accept-all-defaults"
+
+echo "========================================"
+
+echo "Prepare workshop repository..."
+
 rm -rf /u01/content/cloud-native-devops-workshop*
 
 rm -rf /u01/content/HOL*
