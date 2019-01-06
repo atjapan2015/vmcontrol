@@ -58,13 +58,13 @@ rm -rf /u01/content/weblogic-kubernetes-operator
 
 git clone https://github.com/oracle/weblogic-kubernetes-operator.git
 
-git clone https://github.com/nagypeter/HOL6283.git
+cd /u01/content/weblogic-kubernetes-operator
+
+git checkout v1.1
 
 rm -f ~/.kube/config
 
-git clone https://github.com/nagypeter/HOL6284.git
-
-git clone https://github.com/nagypeter/HOL6285.git
+rm -rf  /u01/weblogic-output-directory/*
 
 echo "========================================"
 
