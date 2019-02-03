@@ -84,6 +84,24 @@ bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1GULaK2j-LFiC
 
 echo "========================================"
 
+echo "Install Helm..."
+
+rm -rf ~/.helm
+
+sudo rm -rf /usr/local/bin/helm
+
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > get_helm.sh
+
+chmod 700 get_helm.sh
+
+./get_helm.sh --version v2.8.2
+
+helm init
+
+rm -rf helm*
+
+echo "========================================"
+
 # first try to delete the rule
 sudo iptables -D INPUT -i docker0 -j ACCEPT
 
