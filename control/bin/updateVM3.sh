@@ -72,7 +72,7 @@ git clone https://github.com/oracle/weblogic-kubernetes-operator.git
 
 cd /u01/content/weblogic-kubernetes-operator
 
-git checkout v1.1
+git checkout 2.0
 
 rm -f ~/.kube/config
 
