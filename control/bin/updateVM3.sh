@@ -139,7 +139,7 @@ then
     echo "~/.bashrc is already configured for json_pp."
 else
     # bashrc not configured for json_pp, need to add
-    sudo echo "alias json_pp='python -mjson.tool'" >> foo.txt
+    sudo echo "alias json_pp='python -mjson.tool'" >> $BASHRC_FILE
     echo "~/.bashrc now has been configured for json_pp."
 fi
 
