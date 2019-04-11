@@ -74,6 +74,13 @@ cd /u01/content/weblogic-kubernetes-operator
 
 git checkout 2.0
 
+cd /u01/content/weblogic-kubernetes-operator/kubernetes/samples/scripts/terraform
+cp oci.props.template oci.props
+
+sed -i 's/vermin/pony/g' metamorphosis.txt
+
+sed -i 's/vermin/pony/g' metamorphosis.txt
+
 rm -f ~/.kube/config
 
 rm -rf  /u01/weblogic-output-directory/*
@@ -99,6 +106,42 @@ chmod 700 get_helm.sh
 helm init
 
 rm -rf helm*
+
+echo "========================================"
+
+echo "Install Terraform..."
+
+sudo rm -f /usr/local/bin/terraform
+
+rm -rf ~/.terraformrc
+
+curl -LOk https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip  --output ~/terraform_0.11.11_linux_amd64.zip
+
+sudo unzip ~/terraform_0.11.11_linux_amd64.zip -d /usr/local/bin
+
+mkdir -p /u01/terraform-provider-oci
+
+curl -LOk https://github.com/terraform-providers/terraform-provider-oci/archive/v3.16.0.zip --output ~/v3.16.0.zip
+
+unzip ~/v3.16.0.zip -d /u01/terraform-provider-oci
+
+mkdir -p ~/.terraformrc
+
+echo "========================================"
+
+BASHRC_FILE=/home/oracle/.bashrc
+
+grepresult=$(grep -c "alias json_pp='python -mjson.tool'" $BASHRC_FILE -s)
+
+if [ $grepresult == 1 ]
+then
+    # bashrc configured for json_pp
+    echo "~/.bashrc is already configured for json_pp."
+else
+    # bashrc not configured for json_pp, need to add
+    sudo echo "alias json_pp='python -mjson.tool'" >> foo.txt
+    echo "~/.bashrc now has been configured for json_pp."
+fi
 
 echo "========================================"
 
