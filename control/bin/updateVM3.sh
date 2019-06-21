@@ -52,7 +52,15 @@ echo "Install OCI CLI"
 
 rm -rf /home/oracle/lib/oracle-cli
 
-bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh) --accept-all-defaults"
+rm -f /home/oracle/oci_install.sh
+
+curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh --output /home/oracle/oci_install.sh
+
+chmod 755 /home/oracle/oci_install.sh
+
+/home/oracle/oci_install.sh --accept-all-defaults
+
+rm -f /home/oracle/oci_install.sh
 
 mkdir -p ~/.oci
 
