@@ -156,7 +156,7 @@ GITUPDATE_SHORTCUT=~/Desktop/UpdateDemoGitOnly.desktop
 
 if grep -q "Exec=/u01/content/vmcontrol/control/bin/updateGitOnly.sh" $GITUPDATE_SHORTCUT;
 then
-    echo "GitUpdateOnly shortcut is ready."
+    echo "UpdateDemoGitOnly shortcut is ready."
 else
     cat > $GITUPDATE_SHORTCUT <<EOF
 [Desktop Entry]
@@ -169,7 +169,8 @@ Exec=/u01/content/vmcontrol/control/bin/updateGitOnly.sh wait
 Name=Update Demo's Git Only
 Icon=/u01/content/vmcontrol/control/images/git-circle.jpg
 EOF
-    echo "Firefox shortcut has been created."
+    chmod 755 $GITUPDATE_SHORTCUT
+    echo "UpdateDemoGitOnly shortcut has been created."
 fi
 echo "========================================"
 
