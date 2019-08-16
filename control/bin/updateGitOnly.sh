@@ -27,6 +27,7 @@ while IFS= read -r GIT_URL_AND_VERSION; do
      then
        GIT_URL=${strarr[n]}
      elif ((n == 1))
+     then
        BRANCH=${strarr[n]}
      fi
   done
