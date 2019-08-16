@@ -152,6 +152,26 @@ else
 fi
 
 echo "========================================"
+GITUPDATE_SHORTCUT=~/Desktop/UpdateDemoGitOnly.desktop
+
+if grep -q "Exec=/u01/content/vmcontrol/control/bin/updateGitOnly.sh" $GITUPDATE_SHORTCUT;
+then
+    echo "GitUpdateOnly shortcut is ready."
+else
+    cat > $GITUPDATE_SHORTCUT <<EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Icon[en_US]=gnome-panel-launcher
+Name[en_US]=Update Demo's Git Only
+Exec=/u01/content/vmcontrol/control/bin/updateGitOnly.sh wait
+Name=Update Demo's Git Only
+Icon=/u01/content/vmcontrol/control/images/git-circle.jpg
+EOF
+    echo "Firefox shortcut has been created."
+fi
+echo "========================================"
 
 # first try to delete the rule
 sudo iptables -D INPUT -i docker0 -j ACCEPT

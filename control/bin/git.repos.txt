@@ -1,2 +1,1 @@
-https://github.com/nagypeter/helidon-tutorial.git
-https://github.com/nagypeter/nodejs-mongodb-crud.git
+https://github.com/oracle/weblogic-kubernetes-operator.git
