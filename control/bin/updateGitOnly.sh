@@ -14,8 +14,24 @@ echo "GIT _system_ Proxy set to: [${GIT_SYSTEM_PROXY}] (OK to be empty)"
 echo "GIT _global_ Proxy set to: [${GIT_GLOBAL_PROXY}] (OK to be empty)"
 
 #process file contains git repos
-while IFS= read -r GIT_URL; do
-  echo "Next Git repository to clone/update: $GIT_URL"
+while IFS= read -r GIT_URL_AND_VERSION; do
+
+  #Split the string based on the delimiter, ':'
+  readarray -d : -t strarr <<< "$GIT_URL_AND_VERSION"
+
+  BRANCH="master"
+  # Print each value of the array by using loop
+  for (( n=0; n < ${#strarr[*]}; n++))
+  do
+    if ((n == 0))
+     then
+       GIT_URL=${strarr[n]}
+     elif ((n == 1))
+       BRANCH=${strarr[n]}
+     fi
+  done
+
+  echo "Next Git repository to clone/update: $GIT_URL with version $BRANCH"
 
   cd $CONTENT_DIR
 
@@ -37,12 +53,14 @@ while IFS= read -r GIT_URL; do
   if [ ! -e ${GITLOCALFOLDER} ]; then
     echo "Cloning remote repository from ${GIT_URL} to ${GITLOCALFOLDER}..."
     git clone ${GIT_URL}
+    cd ${GITLOCALFOLDER}
+    git checkout ${BRANCH}
   else
     echo "Update remote repository from ${GIT_URL} to ${GITLOCALFOLDER}..."
     cd ${GITLOCALFOLDER}
     git fetch
 
-    git reset --hard origin/master
+    git reset --hard origin/${BRANCH}
 
     echo "========================================"
     echo "The file(s) below is not tracked by git:"
