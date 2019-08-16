@@ -16,21 +16,21 @@ echo "GIT _global_ Proxy set to: [${GIT_GLOBAL_PROXY}] (OK to be empty)"
 #process file contains git repos
 while IFS= read -r GIT_URL_AND_VERSION; do
 
-  #Split the string based on the delimiter, ':'
-  readarray -d : -t strarr <<< "$GIT_URL_AND_VERSION"
-
+  #Split the string based on the delimiter, '|'
   BRANCH="master"
-  # Print each value of the array by using loop
-  for (( n=0; n < ${#strarr[*]}; n++))
-  do
-    if ((n == 0))
-     then
-       GIT_URL=${strarr[n]}
-     elif ((n == 1))
-     then
-       BRANCH=${strarr[n]}
-     fi
-  done
+  while IFS='|' read -ra STRARR; do
+    n=0
+    for i in "${STRARR[@]}"; do
+      if ((n == 0))
+      then
+        GIT_URL=$i
+      elif ((n == 1))
+      then
+        BRANCH=$i
+      fi
+      ((n=n+1))
+    done
+  done <<< "$GIT_URL_AND_VERSION"
 
   echo "Next Git repository to clone/update: $GIT_URL with version $BRANCH"
 
