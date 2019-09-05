@@ -72,22 +72,9 @@ rm -rf /u01/content/cloud-native-devops-workshop*
 
 rm -rf /u01/content/HOL*
 
-cd /u01/content
+rm -rf /u01/workspaces/*
 
 rm -rf /u01/content/weblogic-kubernetes-operator
-
-git clone https://github.com/oracle/weblogic-kubernetes-operator.git
-
-cd /u01/content/weblogic-kubernetes-operator
-
-git checkout 2.0
-
-cd /u01/content/weblogic-kubernetes-operator/kubernetes/samples/scripts/terraform
-cp oci.props.template oci.props
-
-sed -i 's/vermin/pony/g' metamorphosis.txt
-
-sed -i 's/vermin/pony/g' metamorphosis.txt
 
 rm -f ~/.kube/config
 
@@ -95,7 +82,22 @@ rm -rf  /u01/weblogic-output-directory/*
 
 rm -rf ~/.ssh/*
 
-bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1GULaK2j-LFiCrXhwK-BYMPgFMr_nV1mU")"
+cd /u01/content
+
+/u01/content/vmcontrol/control/bin/updateGitOnly.sh
+
+# remote init to pull sensitive configs
+bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1fL6hKVmplp6CEXUursuButCEI7VEzDUX")"
+
+echo "========================================"
+
+echo "Install kubectl..."
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+
+chmod +x ./kubectl
+
+sudo mv ./kubectl /usr/local/bin/kubectl
 
 echo "========================================"
 
