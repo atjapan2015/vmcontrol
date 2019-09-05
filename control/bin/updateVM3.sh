@@ -72,7 +72,7 @@ rm -rf /u01/content/cloud-native-devops-workshop*
 
 rm -rf /u01/content/HOL*
 
-rm -rf /u01/workspaces/*
+rm -rf /u01/workspace/*
 
 rm -rf /u01/content/weblogic-kubernetes-operator
 
