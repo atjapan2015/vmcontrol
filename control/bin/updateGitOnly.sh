@@ -71,4 +71,6 @@ while IFS= read -r GIT_URL_AND_VERSION; do
 
 done < ~/git.repos.txt
 
-read -p "Git update complete. Press [Enter] to close the window"
+echo "Git update complete."
+
+sleep 5s
