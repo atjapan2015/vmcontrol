@@ -25,7 +25,7 @@ FF_SHORTCUT=~/Desktop/chrome.desktop
 
 if grep -q "Exec=/usr/bin/firefox" $FF_SHORTCUT;
 then
-    echo "Firefox shortcut ready."
+    echo "Firefox shortcut is ready."
 else
     cat > $FF_SHORTCUT <<EOF
 [Desktop Entry]
@@ -47,22 +47,22 @@ EOF
     echo "Firefox shortcut has been created."
 fi
 echo "========================================"
+#OCI cli is not necessary for OOW19 HOLs, temporary switched off
+#echo "Install OCI CLI"
 
-echo "Install OCI CLI"
+#rm -rf /home/oracle/lib/oracle-cli
 
-rm -rf /home/oracle/lib/oracle-cli
+#rm -f /home/oracle/oci_install.sh
 
-rm -f /home/oracle/oci_install.sh
+#curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh --output /home/oracle/oci_install.sh
 
-curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh --output /home/oracle/oci_install.sh
+#chmod 755 /home/oracle/oci_install.sh
 
-chmod 755 /home/oracle/oci_install.sh
+#/home/oracle/oci_install.sh --accept-all-defaults
 
-/home/oracle/oci_install.sh --accept-all-defaults
+#rm -f /home/oracle/oci_install.sh
 
-rm -f /home/oracle/oci_install.sh
-
-mkdir -p ~/.oci
+#mkdir -p ~/.oci
 
 echo "========================================"
 
@@ -85,9 +85,6 @@ rm -rf ~/.ssh/*
 cd /u01/content
 
 /u01/content/vmcontrol/control/bin/updateGitOnly.sh
-
-# remote init to pull sensitive configs
-bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1fL6hKVmplp6CEXUursuButCEI7VEzDUX")"
 
 echo "========================================"
 
@@ -119,26 +116,6 @@ rm -rf helm*
 
 echo "========================================"
 
-echo "Install Terraform..."
-
-sudo rm -f /usr/local/bin/terraform
-
-rm -rf ~/.terraformrc
-
-curl -LOk https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip  --output ~/terraform_0.11.11_linux_amd64.zip
-
-sudo unzip ~/terraform_0.11.11_linux_amd64.zip -d /usr/local/bin
-
-mkdir -p /u01/terraform-provider-oci
-
-curl -LOk https://github.com/terraform-providers/terraform-provider-oci/archive/v3.16.0.zip --output ~/v3.16.0.zip
-
-unzip ~/v3.16.0.zip -d /u01/terraform-provider-oci
-
-mkdir -p ~/.terraformrc
-
-echo "========================================"
-
 BASHRC_FILE=/home/oracle/.bashrc
 
 grepresult=$(grep -c "alias json_pp='python -mjson.tool'" $BASHRC_FILE -s)
@@ -154,6 +131,7 @@ else
 fi
 
 echo "========================================"
+
 GITUPDATE_SHORTCUT=~/Desktop/UpdateDemoGitOnly.desktop
 
 if grep -q "Exec=/u01/content/vmcontrol/control/bin/updateGitOnly.sh" $GITUPDATE_SHORTCUT;
@@ -195,5 +173,10 @@ sudo ps -ef | grep PackageKit | grep -v grep | awk '{print $2}' | xargs -r kill 
 sudo yum --enablerepo=* clean all
 
 sudo systemctl disable packagekit
+
+echo "OOW19========================================"
+
+# remote init to pull OOW 19 configs
+bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1fL6hKVmplp6CEXUursuButCEI7VEzDUX")"
 
 echo "Everything is up to date!"
