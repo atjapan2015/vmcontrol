@@ -48,21 +48,21 @@ EOF
 fi
 echo "========================================"
 #OCI cli is not necessary for OOW19 HOLs, temporary switched off
-#echo "Install OCI CLI"
+echo "Install OCI CLI"
 
-#rm -rf /home/oracle/lib/oracle-cli
+rm -rf /home/oracle/lib/oracle-cli
 
-#rm -f /home/oracle/oci_install.sh
+rm -f /home/oracle/oci_install.sh
 
-#curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh --output /home/oracle/oci_install.sh
+curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh --output /home/oracle/oci_install.sh
 
-#chmod 755 /home/oracle/oci_install.sh
+chmod 755 /home/oracle/oci_install.sh
 
-#/home/oracle/oci_install.sh --accept-all-defaults
+/home/oracle/oci_install.sh --accept-all-defaults
 
-#rm -f /home/oracle/oci_install.sh
+rm -f /home/oracle/oci_install.sh
 
-#mkdir -p ~/.oci
+mkdir -p ~/.oci
 
 echo "========================================"
 
@@ -174,9 +174,9 @@ sudo yum --enablerepo=* clean all
 
 sudo systemctl disable packagekit
 
-echo "OOW19========================================"
+# echo "OOW19========================================"
 
 # remote init to pull OOW 19 configs
-bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1fL6hKVmplp6CEXUursuButCEI7VEzDUX")"
+# bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1fL6hKVmplp6CEXUursuButCEI7VEzDUX")"
 
 echo "Everything is up to date!"
