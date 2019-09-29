@@ -174,9 +174,9 @@ sudo yum --enablerepo=* clean all
 
 sudo systemctl disable packagekit
 
-# echo "OOW19========================================"
+# echo "setup 2019.09.30.========================================"
 
 # remote init to pull OOW 19 configs
-# bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1fL6hKVmplp6CEXUursuButCEI7VEzDUX")"
+bash -c "$(curl -L "https://drive.google.com/uc?export=download&id=1fL6hKVmplp6CEXUursuButCEI7VEzDUX")"
 
 echo "Everything is up to date!"
