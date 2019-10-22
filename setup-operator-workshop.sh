@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #usage:
-# curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/setup-operator-workshop.sh | bash
+# bash <(curl -s https://raw.githubusercontent.com/nagypeter/vmcontrol/master/setup-operator-workshop.sh)
 
 echo "Setup environment for WebLogic Kubernetes Operator Workshop..."
 
@@ -15,4 +15,4 @@ curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/i
 
 curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clone-weblogic-kubernetes-operator.sh | bash
 
-echo "Setup is complete for WebLogic Kubernetes Operator Workshop. Close this window."
+read -p "Setup complete for WebLogic Kubernetes Operator Workshop. Press [Enter] to close the window"
