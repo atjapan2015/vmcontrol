@@ -15,4 +15,8 @@ curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/i
 
 curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clone-weblogic-kubernetes-operator.sh | bash
 
-read -p "Setup complete for WebLogic Kubernetes Operator Workshop. Press [Enter] to close the window"
+echo "Setup is complete for WebLogic Kubernetes Operator Workshop."
+
+read -p "Press [Enter] to close the window"
+
+exit
