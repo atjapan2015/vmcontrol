@@ -33,6 +33,6 @@ curl -LO https://git.io/get_helm.sh
 
 chmod 700 get_helm.sh
 
-./get_helm.sh --version v2.8.2
+./get_helm.sh 
 
 rm -rf helm*
