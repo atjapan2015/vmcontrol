@@ -6,8 +6,8 @@
 echo "Clone WebLogic Kubernetes Operator repository..."
 
 # temp solution for OCI instance
-sudo mkdir /u01
-sudo chown opc /u01
+# sudo mkdir /u01
+# sudo chown opc /u01
 
 export CURRENTDIR=$PWD
 export GIT_URL="https://github.com/oracle/weblogic-kubernetes-operator.git"
@@ -19,7 +19,7 @@ export CONTENT_DIR="/u01/content/"
 if [ ! -e "/u01" ]; then
   echo "Creating /u01 folder"
   sudo mkdir /u01
-  sudo chown oracle:oracle /u01
+  sudo chown opc:oracle /u01
 fi
 
 mkdir -p $CONTENT_DIR/$GITLOCALFOLDER
