@@ -15,7 +15,7 @@ curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/i
 
 curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/install-git.sh | bash
 
-curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clean-vm.sh | bash
+# curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clean-vm.sh | bash
 
 curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clone-weblogic-kubernetes-operator.sh | bash
 
