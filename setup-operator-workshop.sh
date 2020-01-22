@@ -5,6 +5,8 @@
 
 echo "Setup environment for WebLogic Kubernetes Operator Workshop..."
 
+curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clean-vm.sh | bash
+
 # curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/install-docker.sh | bash
 
 curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/install-oci.sh | bash
