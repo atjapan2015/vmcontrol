@@ -5,8 +5,6 @@
 
 echo "Setup environment for WebLogic Kubernetes Operator Workshop..."
 
-curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/config-vm.sh | bash
-
 #clean
 curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clean-vm.sh | bash
 
@@ -23,5 +21,7 @@ curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/c
 
 #clean
 curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/clean-vm.sh | bash
+
+curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/master/scripts/post-config-vm.sh | bash
 
 echo "Setup is complete for WebLogic Kubernetes Operator Workshop."
