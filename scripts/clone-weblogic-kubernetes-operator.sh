@@ -19,8 +19,9 @@ export CONTENT_DIR="/u01/content/"
 if [ ! -e "/u01" ]; then
   echo "Creating /u01 folder"
   sudo mkdir /u01
-  sudo chown opc:oracle /u01
 fi
+
+sudo chown opc:oracle /u01
 
 mkdir -p $CONTENT_DIR/$GITLOCALFOLDER
 
