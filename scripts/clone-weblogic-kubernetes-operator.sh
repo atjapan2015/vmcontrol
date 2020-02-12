@@ -36,7 +36,7 @@ if [ ! -e ${GITLOCALFOLDER} ]; then
   echo "Cloning remote repository from ${GIT_URL} to ${GITLOCALFOLDER}..."
   git clone ${GIT_URL} -b ${BRANCH}
   cd ${GITLOCALFOLDER}
-  git checkout ${BRANCH} ${TAG}
+  git checkout -b ${BRANCH} ${TAG}
 else
   echo "Update remote repository from ${GIT_URL} to ${GITLOCALFOLDER}..."
   cd ${GITLOCALFOLDER}
