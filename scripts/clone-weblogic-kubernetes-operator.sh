@@ -11,8 +11,7 @@ echo "Clone WebLogic Kubernetes Operator repository..."
 
 export CURRENTDIR=$PWD
 export GIT_URL="https://github.com/oracle/weblogic-kubernetes-operator.git"
-export BRANCH="2.0"
-export TAG="v2.4.0"
+export BRANCH="v2.4.0"
 export GITLOCALFOLDER="weblogic-kubernetes-operator"
 export CONTENT_DIR="/u01/content/"
 
@@ -36,7 +35,6 @@ if [ ! -e ${GITLOCALFOLDER} ]; then
   echo "Cloning remote repository from ${GIT_URL} to ${GITLOCALFOLDER}..."
   git clone ${GIT_URL} -b ${BRANCH}
   cd ${GITLOCALFOLDER}
-  git checkout ${TAG}
 else
   echo "Update remote repository from ${GIT_URL} to ${GITLOCALFOLDER}..."
   cd ${GITLOCALFOLDER}
