@@ -11,7 +11,7 @@ echo "Clone WebLogic Kubernetes Operator repository..."
 
 export CURRENTDIR=$PWD
 export GIT_URL="https://github.com/oracle/weblogic-kubernetes-operator.git"
-export BRANCH="2.0"
+export BRANCH="2.4"
 export GITLOCALFOLDER="weblogic-kubernetes-operator"
 export CONTENT_DIR="/u01/content/"
 
