@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #usage:
-# curl -LSs https://raw.githubusercontent.com/nagypeter/vmcontrol/scripts/master/bin/install-oci.sh | bash
+# curl -LSs https://raw.githubusercontent.com/atjapan2015/vmcontrol/scripts/master/bin/install-oci.sh | bash
 
 echo "Install OCI CLI"
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export CONTENT_DIR="/u01/content/"
-export GIT_REPOS="https://raw.githubusercontent.com/nagypeter/vmcontrol/master/control/bin/git.repos.txt"
+export GIT_REPOS="https://raw.githubusercontent.com/atjapan2015/vmcontrol/master/control/bin/git.repos.txt"
 
 . ~/.bashrc
 

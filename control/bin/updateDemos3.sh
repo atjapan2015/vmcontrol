@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export CONTENT_DIR="/u01/content/vmcontrol"
-export GIT_URL="https://github.com/nagypeter/vmcontrol.git"
+export GIT_URL="https://github.com/atjapan2015/vmcontrol.git"
 export GIT_BRANCH="master"
 
 #sudo $CONTENT_DIR/control/bin/sudoNetwork.sh
